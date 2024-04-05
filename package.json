@@ -13,7 +13,9 @@
   "scripts": {
     "sass": "sass src/scss:build/css",
     "css": "gulp css",
-    "dev": "gulp dev"
+    "dev": "gulp dev",
+    "gitpush": "gulp  gitpush",
+    "gitpull": "gulp gitpull"
   },
   "keywords": [
     "SASS",
@@ -22,6 +24,7 @@
   "author": "LLACH",
   "license": "ISC",
   "dependencies": {
+    "gulp-git": "^2.10.1",
     "normalize.css": "^8.0.1"
   }
 }
