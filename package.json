@@ -1,0 +1,27 @@
+{
+  "name": "proyecto_con_gulp_sass_html",
+  "version": "1.0.0",
+  "description": "Proyecto",
+  "main": "index.js",
+  "devDependencies": {
+    "gulp": "^5.0.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-sass": "^5.1.0",
+    "gulp-webp": "^5.0.0",
+    "sass": "^1.72.0"
+  },
+  "scripts": {
+    "sass": "sass src/scss:build/css",
+    "css": "gulp css",
+    "dev": "gulp dev"
+  },
+  "keywords": [
+    "SASS",
+    "GULP"
+  ],
+  "author": "LLACH",
+  "license": "ISC",
+  "dependencies": {
+    "normalize.css": "^8.0.1"
+  }
+}

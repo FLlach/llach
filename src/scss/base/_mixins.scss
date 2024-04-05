@@ -1,0 +1,40 @@
+@use "base/variables";
+
+/*
+@mixin heading ($color: black) {
+    text-transform: uppercase;
+    font-size: 2.4rem;
+    color: $color;
+    letter-spacing: 1rem;
+}
+*/
+
+@mixin phone{
+    @media (min-width: variables.$telefono){
+        @content;
+    }
+}
+
+@mixin tablet{
+    @media (min-width: variables.$tablet){
+        @content;
+    }
+}
+
+@mixin desktop{
+    @media (min-width: variables.$desktop){
+        @content;
+    }
+}
+
+@mixin desktopXL{
+    @media (min-width: variables.$desktopXL){
+        @content;
+    }
+}
+
+@mixin grid($columnas, $espaciado){
+    display: grid;
+    grid-template-columns: repeat($columnas, 1fr);
+    gap: $espaciado;
+}
