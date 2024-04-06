@@ -4,18 +4,18 @@
   "description": "Proyecto",
   "main": "index.js",
   "devDependencies": {
-    "gulp": "^5.0.0",
+    "gulp": "^4.0.2",
+    "gulp-avif": "^1.1.1",
+    "gulp-cache": "^1.1.3",
     "gulp-plumber": "^1.2.1",
     "gulp-sass": "^5.1.0",
-    "gulp-webp": "^5.0.0",
+    "gulp-webp": "^4.0.1",
     "sass": "^1.72.0"
   },
   "scripts": {
     "sass": "sass src/scss:build/css",
     "css": "gulp css",
-    "dev": "gulp dev",
-    "gitpush": "gulp  gitpush",
-    "gitpull": "gulp gitpull"
+    "dev": "gulp dev"
   },
   "keywords": [
     "SASS",
@@ -24,7 +24,7 @@
   "author": "LLACH",
   "license": "ISC",
   "dependencies": {
-    "gulp-git": "^2.10.1",
+    "gulp-imagemin": "^7.1.0",
     "normalize.css": "^8.0.1"
   }
 }

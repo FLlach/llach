@@ -1,8 +1,10 @@
-const {task, src, dest, watch} = require("gulp");
+const {task, src, dest, watch, parallel} = require("gulp");
 const sass = require("gulp-sass")(require('sass'));
 const plumber = require( "gulp-plumber");
-//const webp = require("gulp-webp");
-const git = require("gulp-git");
+const webp = require("gulp-webp");
+const imagemin = require("gulp-imagemin");
+const cache = require( "gulp-cache");
+const avif = require ("gulp-avif");
 
 function css(done){
     src("src/scss/**/*.scss")//Identificar archivo
@@ -19,48 +21,44 @@ function dev(done){
     done()
 }
 
-function cimg(done){
-    src("")
+function versionWebp(done){
+
+    const opciones = {
+        quility: 50
+    };
+
+    src("src/img/**/*.{png,jpg}")
+        .pipe(webp(opciones))
+        .pipe(dest("build/img"))
     done()
 }
 
-function gitinit(done){
-    task('init', function(){
-        git.init(function (err) {
-        if (err) throw err;
-        });
-    });
+function versionAvif(done){
+
+    const opciones = {
+        quility: 50
+    };
+
+    src("src/img/**/*.{png,jpg}")
+        .pipe(avif(opciones))
+        .pipe(dest("build/img"))
     done()
+}
+
+function imagenes(done){
+
+    const opciones = {
+        optimizationLevel: 3
     }
-
-function gitpull(done){
-    // Task to pull changes from the remote repository
-    task('git-pull', function() {
-        return git.pull('origin', 'master', function(err) {
-            if (err) throw err;
-        });
-    });
+    src("src/img/**/*.{png,jpg}")
+        .pipe(cache(imagemin(opciones)))
+        .pipe(dest( "build/img" ));
     done()
 }
 
-function addremote(done){
-    git.addRemote('origin', 'https://github.com/FLlach/llach')
-    done()
 
-}
-
-function gitpush(done){
-    // Task to push changes to the remote repository
-    src('./*')
-        .pipe(git.add())
-        .pipe(git.commit("auto commit"))
-        .pipe(git.push('origin', 'master'));
-
-    done()
-}
-
-exports.gitinit = gitinit
-exports.gitpush =  gitpush
-exports.gitpull =  gitpull
+exports.versionWebp = versionWebp
+exports.versionAvif = versionAvif
 exports.css= css
-exports.dev= dev
+exports.dev= parallel (dev, versionWebp, imagenes)
+exports.imagenes = imagenes;
