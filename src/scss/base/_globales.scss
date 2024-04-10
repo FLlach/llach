@@ -9,6 +9,7 @@ html {
 *:before,
 *:after{
     box-sizing: inherit;
+    behavior: smooth;
 }
 
 body{
@@ -17,6 +18,10 @@ body{
 
     &.fijar-body{
         overflow: hidden;
+    }
+
+    &.body-scroll{
+        padding-top: 86px;
     }
 }
 

@@ -316,6 +316,7 @@ html {
 *:before,
 *:after {
   box-sizing: inherit;
+  behavior: smooth;
 }
 
 body {
@@ -324,6 +325,9 @@ body {
 }
 body.fijar-body {
   overflow: hidden;
+}
+body.body-scroll {
+  padding-top: 86px;
 }
 
 p {
@@ -375,7 +379,18 @@ img {
 */
 .header {
   background-color: #4cb8b3;
-  position: sticky;
+  z-index: 9999;
+}
+@media (min-width: 768px) {
+  .header {
+    position: fixed;
+    width: 100%;
+  }
+  .header.fijo {
+    position: fixed;
+    width: 100%;
+    box-shadow: 0.2rem 0.1rem 0.1rem #666;
+  }
 }
 .header h1 {
   color: #ffffff;

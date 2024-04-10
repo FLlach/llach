@@ -3,7 +3,17 @@
 
 .header {
     background-color: variables.$verde;
-    position: sticky;
+    z-index: 9999;
+    @include mixins.tablet{
+        position: fixed;
+        width: 100%;
+        &.fijo{
+            position: fixed;
+            width: 100%;
+            box-shadow: .2rem .1rem .1rem #666;
+        }
+    }
+    
     h1 {
         color: variables.$blanco;
         text-align: center;
