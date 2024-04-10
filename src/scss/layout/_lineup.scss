@@ -1,0 +1,7 @@
+@use "base/variables";
+@use "base/mixins";
+
+.lineup{
+    background-color: variables.$rosa;
+    padding: 5rem 0;
+}

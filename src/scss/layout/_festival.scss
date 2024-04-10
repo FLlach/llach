@@ -3,6 +3,9 @@
 
 .sobre-festival {
     padding: 5rem 0;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    column-gap: 5rem;
     @include mixins.tablet{
         @include mixins.grid(2, 5rem);
     }

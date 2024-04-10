@@ -36,7 +36,7 @@ function versionWebp(done){
 function versionAvif(done){
 
     const opciones = {
-        quility: 50
+        quality: 50
     };
 
     src("src/img/**/*.{png,jpg}")
