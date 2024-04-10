@@ -15,9 +15,9 @@
         <div class="contenedor contenido-header">
             <h1> Rock & EDM Festival</h1>
             <nav class="navegacion-principal">
-                <a href="#">Line Up</a>
-                <a href="#">Galería</a>
-                <a href="#">Boletos</a>    
+                <a href="#lineUp">Line Up</a>
+                <a href="#galeria">Galería</a>
+                <a href="#boletos">Boletos</a>    
             </nav>
         </div>
     </header>
@@ -51,7 +51,7 @@
         </div>
     </section>
 
-    <section class="lineup">
+    <section id="lineUp" class="lineup">
         <h3>Line Up </h3>
         <p class="dia">Viernes 21</p>
         <div class="escenario-contenedor contenedor">
@@ -77,29 +77,30 @@
                         17:00 | <span>30 Seconds to Mars</span>
                     </li>   
                 </ul>
-                <div class="escenario edm bg-verde">
-                    <p class="nombre-escenario">Escenario EDM </p>
-                    <ul class="calendario">
-                        <li>
-                            24:00 | <span>Deadmau5</span>
-                        </li>
-                        <li>
-                            22:00 | <span>Tïesto</span>
-                        </li>
-                        <li>
-                            20:00 | <span>Hardwell</span>
-                        </li>
-                        <li>
-                            19:00 | <span>Dash Berlin</span>
-                        </li>
-                        
-                        <li>
-                            18:00 | <span>Fedde Legrand</span>
-                        </li>
-                        <li>
-                            17:00 | <span>Audien</span>
-                        </li>               
-                    </ul>
+            </div>
+            <div class="escenario edm bg-verde">
+                <p class="nombre-escenario">Escenario EDM </p>
+                <ul class="calendario">
+                    <li>
+                        24:00 | <span>Deadmau5</span>
+                    </li>
+                    <li>
+                        22:00 | <span>Tïesto</span>
+                    </li>
+                    <li>
+                        20:00 | <span>Hardwell</span>
+                    </li>
+                    <li>
+                        19:00 | <span>Dash Berlin</span>
+                    </li>
+                    
+                    <li>
+                        18:00 | <span>Fedde Legrand</span>
+                    </li>
+                    <li>
+                        17:00 | <span>Audien</span>
+                    </li>               
+                </ul>
             </div>
         </div>
 
@@ -128,34 +129,94 @@
                         17:00 | <span>Lamb of God</span>
                     </li>
                 </ul>
-                <div class="escenario edm bg-amarillo">
-                    <p class="nombre-escenario">Escenario EDM </p>
-                    <ul class="calendario">
-                        <li>
-                            24:00 | <span>Paul Van Dyk</span>
-                        </li>
-                        <li>
-                            22:00 | <span>Armin Van Buuren</span>
-                        </li>
-                        <li>
-                            20:00 | <span>Above & Beyond</span>
-                        </li>
-                        <li>
-                            19:00 | <span>Eric Prdyz</span>
-                        </li>
-                        
-                        <li>
-                            18:00 | <span>Ferry Corsten</span>
-                        </li>
-                        <li>
-                            17:00 | <span>Vini Vici</span>
-                        </li>
-                    </ul>
             </div>
+            <div class="escenario edm bg-amarillo">
+                <p class="nombre-escenario">Escenario EDM </p>
+                <ul class="calendario">
+                    <li>
+                        24:00 | <span>Paul Van Dyk</span>
+                    </li>
+                    <li>
+                        22:00 | <span>Armin Van Buuren</span>
+                    </li>
+                    <li>
+                        20:00 | <span>Above & Beyond</span>
+                    </li>
+                    <li>
+                        19:00 | <span>Eric Prdyz</span>
+                    </li>
+                    
+                    <li>
+                        18:00 | <span>Ferry Corsten</span>
+                    </li>
+                    <li>
+                        17:00 | <span>Vini Vici</span>
+                    </li>
+                </ul>
+                </div>
         </div>
 
     </section>
 
+    <section id="galeria" class="galeria contenedor">
+        <h3>Galería</h3>
+        <ul class="galeria-imagenes">
+
+        </ul>
+    </section>
     
+    <section id="boletos" class="boletos bg-verde">
+        <h3>Boletos</h3>
+        <div class="contenedor contenedor-boletos">
+            <div class="basico pase">
+                <p class="nombre-pase">Pase 1 Día</p>
+                <header class="pase-header">
+                    <p>Incluye</p>
+                </header>
+                <div class="pase-body">
+                    <ul>
+                        <li>
+                            Acceso a ambos escenarios
+                        </li>
+                        <li>
+                            Comida y Bebida
+                        </li>
+                    </ul>
+                </div>
+                <footer class="pase-footer">
+                    <p>$100</p>
+                </footer>
+            </div>
+            <div class="premium pase">
+                <p class="nombre-pase">Pase 2 Días</p>
+                <header class="pase-header">
+                    <p>Incluye</p>
+                </header>
+                <div class="pase-body">
+                    <ul>
+                        <li>
+                            Acceso a ambos escenarios
+                        </li>
+                        <li>
+                            Comida y Bebida
+                        </li>
+                        <li>
+                            Camiseta del Evento
+                        </li>
+                        <li>
+                            Acceso Vip
+                        </li>
+                    </ul>
+                </div>
+                <footer class="pase-footer">
+                    <p>$180</p>
+                </footer>
+            </div>
+        </div>
+    </section>
+    <footer class="site-footer">
+        <p>Rock & EDM Festival. Todos los derechos reservador</p>
+    </footer>
+    <script src="build/js/app.js"></script>
 </body>
 </html>

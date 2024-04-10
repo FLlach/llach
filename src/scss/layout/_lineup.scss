@@ -4,4 +4,77 @@
 .lineup{
     background-color: variables.$rosa;
     padding: 5rem 0;
+
+    h3, p{
+        text-align: center;
+        color: variables.$blanco;
+    }
+
+    .dia{
+        text-transform: uppercase;
+        margin: 5rem 0;
+    }
+
+    .escenario{
+        padding-top: 2rem;
+    }
+
+    p{
+        &:after{
+            content:"";
+            display: block;
+            width: 20rem;
+            height: 10rem;
+            background-size: 15rem;
+            background-repeat: no-repeat;
+            background-position: center center;
+            margin:2rem auto 0 auto;
+        }
+    }
+}
+
+.edm .nombre-escenario{
+    &:after{
+        background-image: url(../img/icono_edm.png);
+    } 
+}
+
+.rock .nombre-escenario{
+    &:after{
+        background-image: url(../img/icono_rock.png);
+    } 
+}
+
+.calendario{
+    @include mixins.resetear-lista;
+    li{
+        padding: 2.5rem;
+        font-weight: 700;
+
+        span{
+            font-weight: 400;
+        }
+    }
+}
+.escenario-contenedor{
+        @include mixins.tablet{
+            @include mixins.grid(2, 5rem)
+        }
+        p{
+            color: variables.$negro;
+        }
+}
+
+.bg-amarillo{
+    background-color: variables.$amarillo;
+
+    li:nth-child(odd){
+        background-color: darken(variables.$amarillo, 20%);
+    }
+}
+.bg-verde{
+    background-color: variables.$verde;
+    li:nth-child(odd){
+        background-color: darken(variables.$verde, 10%);
+    }
 }
