@@ -5,11 +5,19 @@ const webp = require("gulp-webp");
 const imagemin = require("gulp-imagemin");
 const cache = require( "gulp-cache");
 const avif = require ("gulp-avif");
+const autoprefixer = require("autoprefixer")
+const cssnano = require("cssnano")
+const postcss = require("gulp-postcss")
+const sourcemaps = require("gulp-sourcemaps")
+const terser = require("gulp-terser-js")
 
 function css(done){
     src("src/scss/**/*.scss")//Identificar archivo
+        .pipe(sourcemaps.init())
         .pipe(plumber())
         .pipe(sass())//compilar
+        .pipe(postcss([ autoprefixer(), cssnano()]))
+        .pipe(sourcemaps.write("."))
         .pipe(dest("build/css"));//guardar
 
     done() //callback
@@ -17,6 +25,9 @@ function css(done){
 
 function javascript(done){
     src("src/js/**/*.js")
+        .pipe(sourcemaps.init())
+        .pipe(terser())
+        .pipe(sourcemaps.write("."))
         .pipe(dest("build/js"))
     
     done()
@@ -70,3 +81,4 @@ exports.versionAvif = versionAvif
 exports.css= css
 exports.dev= parallel (dev, versionWebp, imagenes)
 exports.imagenes = imagenes;
+exports.javascript = javascript
